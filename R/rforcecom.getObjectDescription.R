@@ -30,8 +30,8 @@ function(session, objectName){
  
  # Parse XML
  xdf <- getNodeSet(xmlParse(t$value()), "//fields")
- xdfList <- sapply(xdf,xmlToList)
- xdfDFList <- sapply(xdfList,as.data.frame)
+ xdfList <- lapply(xdf,xmlToList)
+ xdfDFList <- sapply(xdfList,data.frame)
  set <- function(x,y){
   coln <- unique(c(colnames(x),colnames(y)))
   x[coln[!coln %in% colnames(x)]] <- NA
