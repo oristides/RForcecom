@@ -30,18 +30,18 @@ function(session, objectName){
  
  # Parse XML
  xdf <- getNodeSet(xmlParse(t$value()), "//fields")
- xdfList <- lapply(xdf,xmlToList)
- xdfDFList <- sapply(xdfList,data.frame)
- set <- function(x,y){
-  coln <- unique(c(colnames(x),colnames(y)))
-  x[coln[!coln %in% colnames(x)]] <- NA
-  y[coln[!coln %in% colnames(y)]] <- NA
-  rbind(x,y)
- }
- for(i in seq(xdfDFList)[-1]){
-  xdfDFList[[1]] <- set(xdfDFList[[1]], xdfDFList[[i]])
- }
- xdf <- xdfDFList[[1]]
+ #xdfList <- lapply(xdf,xmlToList)
+ #xdfDFList <- sapply(xdfList,data.frame)
+ #set <- function(x,y){
+#  coln <- unique(c(colnames(x),colnames(y)))
+ # x[coln[!coln %in% colnames(x)]] <- NA
+#  y[coln[!coln %in% colnames(y)]] <- NA
+#  rbind(x,y)
+ #}
+ #for(i in seq(xdfDFList)[-1]){
+#  xdfDFList[[1]] <- set(xdfDFList[[1]], xdfDFList[[i]])
+ #}
+ #xdf <- xdfDFList[[1]]
  
  return(xdf)
  
