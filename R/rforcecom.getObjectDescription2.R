@@ -1,5 +1,5 @@
 #' @export
-rforcecom.getObjectDescription <-
+rforcecom.getObjectDescription2 <-
 function(session, objectName){
   
  # Send a query
